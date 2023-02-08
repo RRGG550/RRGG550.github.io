@@ -13,13 +13,6 @@
             cluster: 'us2'
         });
 
-        var channel = pusher.subscribe('scoreboard_channel');
-        channel.bind('clock', function (time) {
-            var obj1 = JSON.parse(time.message);
-            var clock = obj1[0];
-            $('#clock').text(clock);
-        });
-
 
         channel.bind('scoreboard', function (data) {
 
@@ -46,6 +39,9 @@
             var eventHeat = obj[1][5];
             $('#eventHeat').text(eventHeat);
 
+            var clock = obj1[0];
+            $('#clock').text(clock);
+            
             // start building html for results table
             htmlStr = htmlStr + '<table id="results">';
 
