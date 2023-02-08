@@ -17,7 +17,7 @@
         channel.bind('scoreboard', function (data) {
 
 
-            var obj = JSON.parse(data.message);
+            var obj = jQuery.parse(data.message);
             var htmlStr = '';
             var athleteNum = 0;
 
