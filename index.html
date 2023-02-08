@@ -13,7 +13,7 @@
             cluster: 'us2'
         });
 
-
+        var channel = pusher.subscribe('scoreboard_channel');
         channel.bind('scoreboard', function (data) {
 
 
