@@ -18,7 +18,7 @@
 
         time_channel.bind('clock', function (time) {
             var obj = JSON.parse(time.message);
-            var clock = obj[0];
+            var clock = obj[1];
             $('#clock').text(clock);
         });
 
