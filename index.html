@@ -15,7 +15,7 @@
 
         var channel = pusher.subscribe('scoreboard_channel');
         channel.bind('clock', function (time) {
-            var obj1 = JSON.parge(data.message);
+            var obj1 = JSON.parge(time.message);
             var clock = obj1[0];
             $('#clock').text(clock);
         });
