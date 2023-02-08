@@ -14,6 +14,12 @@
         });
 
         var channel = pusher.subscribe('scoreboard_channel');
+        channel.bind('clock', function (time) {
+            var clock = obj[0];
+            $('#clock').text(clock);
+        });
+
+
         channel.bind('scoreboard', function (data) {
 
 
@@ -170,6 +176,7 @@
     </style>
 
     <div id="container">
+        <div id="clock">00:00.00</div>
         <h4 id="venue">Venue | @ Place | Location, State</h4>
         <h3 id="eventName">No Event Selected</h3>
         <h5 id="details">
